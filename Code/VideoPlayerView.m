@@ -28,7 +28,7 @@
 
 @implementation VideoPlayerView
 
-(BOOL)isOSVersionSmallerThan7
+- (BOOL)isOSVersionSmallerThan7
 {
 	return ([[UIDevice currentDevice].systemVersion compare:@"7" options:NSNumericSearch] == NSOrderedAscending);
 }
