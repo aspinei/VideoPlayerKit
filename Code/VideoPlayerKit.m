@@ -519,6 +519,7 @@ NSString * const kTrackEventVideoComplete = @"Video Complete";
         switch (status) {
             case AVPlayerStatusReadyToPlay:
                 playWhenReady = YES;
+                [self syncPlayClock];
                 break;
             case AVPlayerStatusFailed:
                 // TODO:
