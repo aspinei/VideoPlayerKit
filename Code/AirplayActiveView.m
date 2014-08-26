@@ -33,7 +33,7 @@
         [_titleLabel setFont:[UIFont fontWithName:@"DINRoundCompPro" size:20.0f]];
         [_titleLabel setTextColor:[UIColor colorWithWhite:0.5f alpha:1.0f]];
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
-        [self addSubview:_titleLabel];
+        //[self addSubview:_titleLabel];
         
         _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [_descriptionLabel setText:@"This video is playing elsewhere"];
@@ -71,16 +71,16 @@
                                            displayImageSize.height)];
     y += displayImageSize.height;
     
-    [_titleLabel setFrame:CGRectMake((bounds.size.width / 2) - (titleLabelSize.width / 2),
-                                     y,
-                                     titleLabelSize.width,
-                                     titleLabelSize.height)];
-    y += titleLabelSize.height - 8;
-    
-    [_descriptionLabel setFrame:CGRectMake((bounds.size.width / 2) - (descriptionLabelSize.width / 2),
-                                           y,
-                                           descriptionLabelSize.width,
-                                           descriptionLabelSize.height)];
+//    [_titleLabel setFrame:CGRectMake((bounds.size.width / 2) - (titleLabelSize.width / 2),
+//                                     y,
+//                                     titleLabelSize.width,
+//                                     titleLabelSize.height)];
+//    y += titleLabelSize.height - 8;
+//
+//    [_descriptionLabel setFrame:CGRectMake((bounds.size.width / 2) - (descriptionLabelSize.width / 2),
+//                                           y,
+//                                           descriptionLabelSize.width,
+//                                           descriptionLabelSize.height)];
 }
 
 @end

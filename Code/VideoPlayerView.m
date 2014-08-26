@@ -41,7 +41,7 @@
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
         [_titleLabel setNumberOfLines:2];
         [_titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
-        [self addSubview:_titleLabel];
+        //[self addSubview:_titleLabel];
         
         _playerControlBar = [[UIView alloc] init];
         [_playerControlBar setOpaque:NO];
@@ -136,10 +136,10 @@
         
         self.autoresizingMask = UIViewAutoresizingNone;
         
-        [_titleLabel setFrame:CGRectMake(insetBounds.origin.x + self.padding,
-                                         insetBounds.origin.y,
-                                         insetBounds.size.width,
-                                         titleLabelSize.height)];
+//        [_titleLabel setFrame:CGRectMake(insetBounds.origin.x + self.padding,
+//                                         insetBounds.origin.y,
+//                                         insetBounds.size.width,
+//                                         titleLabelSize.height)];
         
         CGRect playerFrame = CGRectMake(0,
                                         0,
@@ -217,12 +217,6 @@
     [_progressView setFrame:[_videoScrubber trackRectForBounds:scrubberRect]];
 }
 
-- (void)setTitle:(NSString *)title
-{
-    [_titleLabel setText:title];
-    [self setNeedsLayout];
-}
-
 - (void)setFullscreen:(BOOL)fullscreen
 {
     if (_fullscreen == fullscreen) {
@@ -232,13 +226,6 @@
     _fullscreen = fullscreen;
     
     [self setNeedsLayout];
-}
-
-- (CGFloat)heightForWidth:(CGFloat)width
-{
-    CGSize titleLabelSize = [@"M\nM" sizeWithFont:[_titleLabel font]
-                                constrainedToSize:CGSizeMake(width - _padding - _padding, CGFLOAT_MAX)];
-    return (width / 16 * 9) + titleLabelSize.height;
 }
 
 - (AVPlayer *)player
