@@ -64,6 +64,7 @@
         {
             _fullScreenButton = [UIButton buttonWithType:UIButtonTypeSystem];
         }
+        [_fullScreenButton setImage:[UIImage imageNamed:@"fullscreen-button"] forState:UIControlStateNormal];
         [_fullScreenButton setShowsTouchWhenHighlighted:YES];
         [_playerControlBar addSubview:_fullScreenButton];
         
