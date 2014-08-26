@@ -217,6 +217,12 @@
     [_progressView setFrame:[_videoScrubber trackRectForBounds:scrubberRect]];
 }
 
+- (void)setTitle:(NSString *)title
+{
+    //[_titleLabel setText:title];
+    //[self setNeedsLayout];
+}
+
 - (void)setFullscreen:(BOOL)fullscreen
 {
     if (_fullscreen == fullscreen) {
@@ -226,6 +232,13 @@
     _fullscreen = fullscreen;
     
     [self setNeedsLayout];
+}
+
+- (CGFloat)heightForWidth:(CGFloat)width
+{
+    CGSize titleLabelSize = [@"M\nM" sizeWithFont:[_titleLabel font]
+                                constrainedToSize:CGSizeMake(width - _padding - _padding, CGFLOAT_MAX)];
+    return (width / 16 * 9) + titleLabelSize.height;
 }
 
 - (AVPlayer *)player
